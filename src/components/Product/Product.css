@@ -28,6 +28,9 @@
   margin-top: 7px;
 }
 .btn-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background: #ffe0b3;
   border-radius: 0px 0px 8px 8px;
@@ -37,4 +40,8 @@
 }
 .btn-cart:hover {
   background-color: orange;
+}
+
+.btn-text {
+  margin-right: 10px;
 }
