@@ -1,12 +1,11 @@
-import "./App.css";
-import Header from "./components/Header/Header";
-import Shop from "./components/Shop/Shop";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "./layouts/Main";
 
 function App() {
+  const router = createBrowserRouter([{ path: "/", element: <Main /> }]);
   return (
     <div className="App">
-      <Header></Header>
-      <Shop></Shop>
+      <RouterProvider router={router} />
     </div>
   );
 }
