@@ -5,7 +5,7 @@ export const productsAndCartLoader = async () => {
   const productsData = await fetch("products.json");
   const products = await productsData.json();
 
-  const previousCart = [];
+  const initialCart = [];
   // get cart
   const savedCart = getStoredCart();
   for (const id in savedCart) {
@@ -13,8 +13,8 @@ export const productsAndCartLoader = async () => {
     if (addedProduct) {
       const quantity = savedCart[id];
       addedProduct.quantity = quantity;
-      previousCart.push(addedProduct);
+      initialCart.push(addedProduct);
     }
   }
-  return { products, previousCart };
+  return { products: products, initialCart: initialCart };
 };
