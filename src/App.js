@@ -26,7 +26,14 @@ function App() {
           loader: productsAndCartLoader,
           element: <Orders />,
         },
-        { path: "/inventory", element: <Inventory /> },
+        {
+          path: "/inventory",
+          element: (
+            <PrivateRoute>
+              <Inventory />
+            </PrivateRoute>
+          ),
+        },
         { path: "/about", element: <About /> },
         { path: "/login", element: <Login /> },
         { path: "/signup", element: <SignUp /> },
